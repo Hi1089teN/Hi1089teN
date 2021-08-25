@@ -1,0 +1,101 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Aug 24 22:26:21 2021
+
+@author: Hiten Dhore
+"""
+
+# Creating a menu driven program
+
+# fibonacci, armstrong, reverse, palindrome and specl case
+ 
+def fib(n):
+    f01 = [0, 1]
+    if n <= 0:
+        print("Incorrect input")
+    elif n <= len(f01):
+        return f01[n - 1]
+    else:
+        neno = fib(n - 1) + fib(n - 2)
+        f01.append(neno)
+        return neno
+
+def ars(n):
+    s=0
+    tv=n
+    while tv>0:
+        sv=tv%10
+        s+=sv**3
+        tv=tv//10
+    if n==s:
+        print(n,"is an Armstrong Number")
+    else:
+        print(n,"is not an Armstrong Number")
+
+def rev(n):
+    s=0
+    tv=n
+    while tv>0:
+        sv=tv%10
+        s=s*10 + sv
+        tv=tv//10
+    print("The reverse of the given number is: ",s)
+
+def pld(n):
+    s=0
+    tv=n
+    while tv>0:
+        sv=tv%10
+        s=s*10 + sv
+        tv=tv//10
+    if n==s:
+        print("The given number is a palindrome")
+    else:
+        print("The given number is not a palindrome")
+
+def dia():
+    import numpy as np
+    a1=np.zeros((3,3))
+    a2=[]
+    for i in range(3):
+      for j in range(3):
+       a=int(input("Enter the number (Row-wise): "))
+       a1[i,j]=a
+       if i==j:
+           a2.append(a)
+    for i in range(3):
+        for k in range(3):
+          if k==i:
+              print(a2[i],end="")
+          else:
+              print('  ',end="")
+        print()
+
+while True:
+    print()
+    print("Menu Driven Program")
+    print()
+    print("1. Fibonacci Sequence")
+    print("2. Armstrong Number")
+    print("3. Reverse of the Number")
+    print("4. Palindrome Number")
+    print("5. Print diagonal of a matrix")
+    print("6. Quit")
+    usch = int(input("Enter the choice: "))
+    if usch==1:
+        nof = int(input("Enter the no. numbers you want: "))
+        for i in range(1,nof+1):
+            print(fib(i))
+    elif usch==6:
+        break
+    elif usch==2:
+        nof = int(input("Enter the number you want to check: "))
+        ars(nof)
+    elif usch==3:
+        nof = int(input("Enter the number you want to reverse: "))
+        rev(nof)
+    elif usch==4:
+        nof = int(input("Enter the number you want to check: "))
+        pld(nof)
+    elif usch==5:
+        dia()
