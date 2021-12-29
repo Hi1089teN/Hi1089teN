@@ -1,4 +1,4 @@
-- 👋 Hi, I’m @Hi1089teN
+- 👋 Hi, I’m @Hi10
 - 👀 I’m interested in programming
 - 🌱 I’m currently learning Python
 - 💞️ I’m a student
